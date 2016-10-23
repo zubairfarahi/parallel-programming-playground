@@ -1,0 +1,5 @@
+# CLion folder
+.idea
+
+# CLion's CMakeList which I don't use
+CMakeLists.txt
