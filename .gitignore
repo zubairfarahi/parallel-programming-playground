@@ -1,5 +1,10 @@
+*.o
+
 # CLion folder
 .idea
 
-# CLion's CMakeList which I don't use
+# CLion's CMakeList which I only use for debugging
 CMakeLists.txt
+
+# Homework folder
+homework

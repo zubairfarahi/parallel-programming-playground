@@ -13,16 +13,25 @@ SOURCES = main.c
 # C Object files
 OBJECTS = $(SOURCES:.c=.o)
 
+# Build directory
+BUILD_DIR = build
+
+# Builds results
+BUILDS = $(addprefix $(BUILD_DIR)/,$(notdir $(OBJECTS)))
+
 # Executable file
 MAIN = main
 
-all:		$(MAIN)
+all:		dir $(MAIN)
 
 $(MAIN): 	$(OBJECTS)
-		$(CC) $(CFLAGS) $(OBJECTS) $(LIBS) -o $(MAIN)
+			$(CC) $(CFLAGS) $(BUILDS) $(LIBS) -o $(BUILD_DIR)/$(MAIN)
 
-.c.o:
-		$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.c
+			$(CC) $(CFLAGS) -c $< -o $(BUILD_DIR)/$(notdir $@)
+
+dir:
+			mkdir -p $(BUILD_DIR)
 
 clean:
-		$(RM) *.o *~ $(MAIN)
+			$(RM) -r $(BUILD_DIR)
