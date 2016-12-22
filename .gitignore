@@ -6,5 +6,8 @@
 # CLion's CMakeList which I only use for debugging
 CMakeLists.txt
 
+# build folders
+build/
+
 # Homework folder
 homework
