@@ -24,8 +24,8 @@ MAIN = main
 
 all:		dir $(MAIN)
 
-$(MAIN): 	$(OBJECTS)
-			$(CC) $(CFLAGS) $(BUILDS) $(LIBS) -o $(BUILD_DIR)/$(MAIN)
+$(MAIN):	$(OBJECTS)
+			$(CC) $(CFLAGS) $(BUILDS) $(LIBS) -o $(MAIN)
 
 %.o: %.c
 			$(CC) $(CFLAGS) -c $< -o $(BUILD_DIR)/$(notdir $@)
@@ -34,4 +34,4 @@ dir:
 			mkdir -p $(BUILD_DIR)
 
 clean:
-			$(RM) -r $(BUILD_DIR)
+			$(RM) -r $(BUILD_DIR) && $(RM) $(MAIN)

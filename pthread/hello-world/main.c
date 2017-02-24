@@ -11,7 +11,7 @@ void* hello_work (void* argument);
 /**
  * Main function
  * @param argc argument count
- * @param argv argumnet vector
+ * @param argv argument vector
  * @return status
  */
 int main (int argc, char** argv) {
@@ -26,9 +26,10 @@ int main (int argc, char** argv) {
     // Allocate memory for threads and threads' arguments
     pthread_t* threads = malloc(thread_count * sizeof(pthread_t));
     int* thread_args = malloc(thread_count * sizeof(int));
+    unsigned i;
 
     // Create threads
-    for (int i = 0; i < thread_count; i++) {
+    for (i = 0; i < thread_count; i++) {
         thread_args[i] = i;
         pthread_create(threads + i, NULL, hello_work, thread_args + i);
     }
@@ -36,7 +37,7 @@ int main (int argc, char** argv) {
     hello_work(NULL);
 
     // Wait for each thread to finish the work
-    for (int i = 0; i < thread_count; i++) {
+    for (i = 0; i < thread_count; i++) {
         pthread_join(threads[i], NULL);
     }
 

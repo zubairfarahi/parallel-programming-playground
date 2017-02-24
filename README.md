@@ -4,10 +4,15 @@ This GitHub project contains my codes I wrote while learning Parallel Programmin
 
 ## Current structure
 
-#### Pthread
+### Pthread
 
-- Hello World (23 Oct 2016)
+- [x] [Hello World](pthread/hello-world) (23 Oct 2016)
+- [x] [Producer Consumer](pthread/producer-consumer) (24 Feb 2017)
 
-#### MPI
+### OpenMP
 
-#### OpenMP
+- [ ] Hello World
+
+### MPI
+
+- [x] [Hello World](mpi/hello-world) (22 Dec 2016)
